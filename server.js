@@ -87,7 +87,7 @@ app.post('/encode', function(req, res) {
         res.json("Try again");
     } else {
         let catpath = encode(original_url);
-        res.json(catpath);
+        res.json(client.host + ':' + client.port + '/' + catpath);
     }
 
 });
@@ -95,13 +95,14 @@ app.post('/encode', function(req, res) {
 function decode(userpath) {
     // search database for userpath
     // if present, return https://<hostname>/catpath
+    // https://localhost:5432/tail-derp-floof-pounce-whisker
 }
 
 // For a user who enters encoded cat url in a browser, redirect to the original url.
 app.post('/:catpath', function(req, res) { 
 
-
     
+
 });
   
 app.listen(process.env.PORT || 5500);
